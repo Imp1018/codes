@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-config/>
+    <mvc:component-scan base-package="com.lanou.entity"/>
+
+
+
+    <bean id="person" class="com.lanou.entity.Person" scope="prototype">
+        <property name="name" value="张三"></property>
+        <property name="age" value="18"></property>
+        <property name="gender" value="男"></property>
+        <property name="dog" ref="dog"></property>
+    </bean>
+
+    <bean id="dog" class="com.lanou.entity.Dog">
+        <property name="name" value="旺财"></property>
+        <property name="color" value="黑色"></property>
+    </bean>
+</beans>
