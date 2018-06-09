@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--css使用的第二种方式: 内嵌式
+    把css样式表 嵌入到HTML页面当中
+    在head标签中 使用style标签 来管理这个页面中所有的css
+    这时 所有的HTML标签都不需要再关心自己的样式
+    会由css统一维护-->
+    <style>
+        /*
+        css 怎么知道要给 哪个标签添加样式
+        这就涉及到css选择器
+        这个页面中 都是 标签选择器
+        语法:
+        标签名{
+        样式一:样式值;
+        样式二:样式值;
+        ...........
+        }
+        */
+
+        div {
+            background-color: #ed000f;
+        }
+
+        p {
+            color: brown;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    这是一个div
+</div>
+<p>
+    这是第一个段落
+</p>
+<p>
+    这是第二个段落
+</p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+a='HelloWorld'
+alert(a)

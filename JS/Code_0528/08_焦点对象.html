@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="username"><br>
+<script type="text/javascript">
+    //js代码 要在html代码下面写
+    //在标准文档流中,使用id来找到一个标签
+    var userInput=document.getElementById('username');
+    //获得焦点:
+    userInput.onfocus=function () {
+        //当input标签获得焦点时 执行的代码
+        //改变input标签的背景颜色
+        userInput.style.backgroundColor='#ff0000'
+    }
+    //失去焦点
+    userInput.onblur=function () {
+        userInput.style.backgroundColor='#00ff00'
+    }
+</script>
+
+</body>
+</html>

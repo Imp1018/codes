@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // 这是注释
+    //输出到控制台
+    //js 非常的随意,每一行语句后
+    //写分号也行,不写分号也行
+    console.log('Hello World');
+    /*
+    对于js来说,他没有基本数据类型
+    定义变量的时候 也不用关心数据类型
+    写数字的时候,也不用关心超出氛围
+    定义变量 统一使用关键字var
+     */
+    var a = 3;
+    var b = 3.14;
+    var c = -987676576687987987987987987987987987;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(a + b);
+    console.log(a / 2);
+    /*
+    js
+    是一门弱类型语言
+    在定义变量的时候,是不需要指定其数据类型的
+    js引擎会根据这个变量的值 来确定该变量的数据类型
+    弱类型不代表没有类型,只不过我们不需要写出来
+    对我们来说 和 强类型语言的区别最大体现在调试上
+    因为 在写代码的时候,不需要声明类型,那么ide也没办法做类型检查
+    所以 很多错误只能在运行时 暴露出来
+     */
+    console.log(typeof a);
+    console.log(typeof b);
+    console.log(typeof c);
+    /*
+    js中
+    单引号 双引号都是字符串
+     */
+    var d = "Hello";
+    var c = 'World';
+    console.log(d);
+    console.log(c);
+    console.log(typeof d);
+    console.log(typeof c);
+    console.log("------------")
+    /*
+    在js中 一个变量的数据类型 可以随着程序的运行
+    任意的改变 这种语言叫动态类型语言
+     */
+    d = 3.14
+    console.log(d)
+    console.log(typeof d)
+
+    //boolean类型
+    var e = true
+    console.log(e)
+    console.log(typeof e)
+
+    //js中如果一个变量 没有值,那么它是undefined类型
+    //即 没有定义数据类型
+    var f
+    console.log(typeof f)
+    //如果给了初值null
+    //那么数据类型是object
+    var g=null
+    console.log(typeof g)
+    //字符串拼接
+    console.log(a+b+c)
+</script>
+
+</body>
+</html>

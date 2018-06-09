@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            /*
+            这四种伪类选择器必须按照固定顺序去写
+            先爱后恨原则
+            */
+        a:link{
+            /*链接还没被访问*/
+            color: dodgerblue;
+        }
+        a:visited{
+            /* 访问过这个链接*/
+            color: cyan;
+        }
+        a:hover{
+            /*鼠标放在上面悬停*/
+            color: azure;
+            background-color: dodgerblue;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+        a:active{
+            /*按住不松手*/
+            color: darkslategray;
+        }
+    </style>
+</head>
+<body>
+<!--之前的选择器 选择的都是 标签-->
+<!--伪类选择器 选择的是 标签的状态
+常见的 就是 a标签-->
+<a href="#">这是一个A标签</a>
+</body>
+</html>

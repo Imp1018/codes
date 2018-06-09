@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>/*
+            多个选择器使用加号进行连接
+            那么只有同时满足这些选择器的标签
+            才能够使用这个样式表
+
+             */
+        .text+p{
+            color: dimgrey;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    aa
+</p>
+<div class="text">
+    bb
+</div>
+<p class="text">
+    苟利国家生死以,岂因祸福避趋之
+</p>
+</body>
+</html>

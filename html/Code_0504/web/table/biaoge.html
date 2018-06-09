@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--表格标签-->
+<table border="3" width="100" height="100">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+
+
+<table>
+    <thead>
+    <tr>
+        <td width="300">排名</td>
+        <td width="120">搜索指数</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>婴儿哭泣司机起疑</td>
+        <td>234234234图</td>
+    </tr>
+    </tbody>
+
+    <!--合并单元格-->
+    <table border="1" width="300" height="300" style="table-layout: fixed;">
+        <tr>
+            <!--和右单元格合并,相当于占用2个格子-->
+
+            <td colspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!--和下放的单元格进行合并,占用两个格子-->
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</table>
+</body>
+</html>

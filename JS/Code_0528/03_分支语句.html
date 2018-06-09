@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    a = true;
+    /*
+    if的条件中 不限定是boolean类型的值
+    什么数据类型都可以
+    boolean:true/false
+    number:0-false/其他-true
+    字符串:空串-false/其他-true
+    undefined:false
+    null:false
+     */
+    if (a) {
+        alert("true")
+    } else {
+        alert("false")
+    }
+
+    var a = 4
+    var b = 3
+
+    if (a > b) {
+        document.write("<p>a比较大</p>")
+    } else if (a == b) {
+        document.write("<p>ab相等</p>")
+    } else {
+        document.write("<p>b比较大</p>")
+    }
+    /*
+    js中 判断相等 有== 和===
+    两个符号只会判断值,3和'3'就是相等的
+    === 则会判断类型3和'3'不相等
+     */
+    a = 3
+    b = '3'
+    if (a == b) {
+        document.write("<p>ab相等</p>")
+    } else {
+        document.write("<p>ab不相等</p>")
+    }
+
+    var f = '3'
+    //switch判断值相等 使用的是===
+    switch (f) {
+        case 1:
+            console.log("aaaa");
+            break
+        case 3:
+            console.log("bbb");
+            break
+        case '3':
+            console.log("cccc");
+            break
+        default:
+            console.log("ddd");
+    }
+</script>
+</body>
+</html>

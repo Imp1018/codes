@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+    在js中 定义方法的语法:
+    function 方法名(参数列表){
+        方法体
+    }
+     */
+    fun1()
+
+    function fun1() {
+        //在方法中定义变量
+        //如果没有写var 那么直接定义的就是全局变量
+        //可以在其他方法中使用
+        a=3
+        document.write('<p id="abc">hahah</p>')
+    }
+
+    document.write(add(3, 5))
+    //对js来说
+    //一个方法 可以有返回值,也可以没有返回值
+    //也可以有的时候有返回值,有的时候没有
+    //返回值可以是任意类型
+    //参数列表中参数的个数可以和实际调用这个方法传入的参数个数不一样
+    //如果调用时给多了,那么多的这个用不上
+    //如果调用时给少了,那么这个参数就会是undefined
+    function add(a, b) {
+        return a + b;
+    }
+
+    function f() {
+
+    }
+</script>
+</body>
+</html>
