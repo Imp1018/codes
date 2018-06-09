@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--
+    通过error page标签
+    可以配置我们项目出错时展示的页面
+    或去往的Servlet
+    -->
+    <error-page>
+        <!--出错码-->
+        <error-code>404</error-code>
+        <!--当出现这个错误时,去往页面-->
+        <location>/error404</location>
+    </error-page>
+</web-app>
