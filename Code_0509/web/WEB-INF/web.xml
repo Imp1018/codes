@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         metadata-complete="true">
+
+    <servlet>
+        <servlet-name>HelloServlt</servlet-name>
+        <servlet-class>com.lanou3g.coede0509.aServlet</servlet-class>
+        <!--当Tomcat启动的时候就会加载这个Servlet-->
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlt</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <!--注册MyServlet-->
+    <servlet>
+        <!--给这个Servlet起个名-->
+        <servlet-name>MS</servlet-name>
+        <!--Servlet 是哪个类-->
+        <servlet-class>com.lanou3g.coede0509.MyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!--Servlet的名字-->
+        <servlet-name>MS</servlet-name>
+        <!--对应的网址 注意 必须 / 开头
+        1. 一个Servlet可以配置多个路径,这些路径都会生效
+        <url-pattern>/my</url-pattern>
+        <url-pattern>/he</url-pattern>
+        <url-pattern>/she</url-pattern>
+        -->
+
+        <!--
+        2. 路径匹配: 只有前半段路径匹配上了,后半段可以随意,即 * 代表任意字符
+        <url-pattern>/my/*</url-pattern>
+        -->
+
+        <!--
+        3. 后缀匹配: 只要最后是以action结尾的 就能匹配
+        <url-pattern>*.action</url-pattern>
+        -->
+
+        <!--
+        4. 啥都匹配: 所有URL都会被匹配到
+         <url-pattern>/*</url-pattern>
+        -->
+        <!--
+        *叫做通配符 表示任意数量的任意字符
+        注意 * 要么出现在开头  要么出现在结尾 一定不会出现在中间
+        -->
+        <url-pattern>/my</url-pattern>
+
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>YourServlet</servlet-name>
+        <servlet-class>com.lanou3g.coede0509.YourServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>YourServlet</servlet-name>
+        <url-pattern>/your</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PathServlet</servlet-name>
+        <servlet-class>com.lanou3g.coede0509.PathServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PathServlet</servlet-name>
+        <url-pattern>/path</url-pattern>
+    </servlet-mapping>
+
+
+<servlet>
+    <servlet-name>sqlServlet</servlet-name>
+    <servlet-class>com.lanou3g.coede0509.MySQLServlet</servlet-class>
+</servlet>
+
+    <servlet-mapping>
+        <servlet-name>sqlServlet</servlet-name>
+        <url-pattern>/mysql</url-pattern>
+    </servlet-mapping>
+</web-app>
