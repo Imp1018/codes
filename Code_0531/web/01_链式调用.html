@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jq/jquery-3.3.1.js"></script>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击</button>
+<div id="box"></div>
+<script>
+    $(function () {
+        // 链式调用  一个效果执行完成后 在执行另一个效果
+        // 不需要回调的形式,使用function回调 代码比较难以维护
+        $('#btn').click(function () {
+            $('#box').hide(2000).show(2000)
+                .slideUp().slideDown().fadeOut().fadeIn
+
+        })
+    })
+</script>
+</body>
+</html>

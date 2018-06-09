@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jq/jquery-3.3.1.js"></script>
+</head>
+<body>
+<button id="send_btn">发送请求</button>
+<p id="name"></p>
+<p id="age"></p>
+<div id="hobbies">
+
+</div>
+<script>
+    $(function () {
+        $('#send_btn').click(function () {
+            $.ajax("/user.do", {
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    alert("请求成功")
+                    // 向页面写数据
+                    $('#name').text(data.username)
+                    $('#age').text(data.age)
+                    for (var i=0;i<data.hobbies.length;i++){
+                        $('#hobbies').append(
+                            $('<p>').text(data.hobbies[i])
+                        )
+                    }
+                },
+                error: function () {
+                    alert("请求失败")
+                }
+            })
+        })
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jq/jquery-3.3.1.js"></script>
+</head>
+<body>
+<form>
+    用户名:<input name="username" id="username"><span id="errorMsg"></span>
+    <br>
+    密码:<input name="password" type="password">
+    <br>
+    <input type="submit" value="注册">
+    <script>
+        $(function () {
+            $('#errorMsg').slideUp()
+            $('#username').blur(function () {
+                // 失去焦点
+                var username = $('#username').val()
+                //  把username通过ajax 发送到后端
+                //  检测用户名是否存在
+                $.ajax('/uu',{
+                    type:"post",
+                    dataType:"json",
+                    data:{
+                        method:'checkUsername',
+                        username:username,
+
+                    },
+                    success:function (result) {
+                        if (result.exist){
+                            $('#errorMsg').text("用户名已存在("+username+")").slideDown()
+                        }else {
+                            $('#errorMsg').slideUp()
+                        }
+                    }
+                })
+
+
+            })
+        })
+    </script>
+
+</form>
+</body>
+</html>

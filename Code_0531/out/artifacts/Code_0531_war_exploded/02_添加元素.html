@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jq/jquery-3.3.1.js"></script>
+</head>
+<body>
+<form>
+    教育经历: <input type="button" id="add_edu" value="添加教育经历">
+    <table id="edu_tb">
+        <tr>
+            <td><input name="edu"></td>
+        </tr>
+    </table>
+</form>
+<script>
+    $(function () {
+        $('#add_edu').click(function () {
+            // 向table标签中 添加数据
+            // $('#edu_tb').append('<tr>\n' +
+            //     '            <td><input name="edu"></td>\n' +
+            //     '        </tr>')
+            $('#edu_tb').append($('<tr>').append($('<td>').append($('<input name="edu">'))))//$('<p>').text('aaa').css({margin:"5px"})
+
+
+        })
+    })
+</script>
+</body>
+</html>

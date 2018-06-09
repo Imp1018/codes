@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4 id="表与表之间的关系">表与表之间的关系</h4>
+
+<ul>
+    <li>一对一：例如t_person表和t_card表，即人和身份证。这种情况需要找出主从关系，即谁是主表，谁是从表。人可以没有身份证，但身份证必须要有人才行，所以人是主表，而身份证是从表。设计从表可以有两种方案： <br>
+        <ul><li>在t_card表中添加外键列（相对t_user表），并且给外键添加唯一约束；</li>
+            <li>给t_card表的主键添加外键约束（相对t_user表），即t_card表的主键也是外键。</li></ul></li>
+    <li>一对多（多对一）：最为常见的就是一对多！一对多和多对一，这是从哪个角度去看得出来的。t_user和t_section的关系，从t_user来看就是一对多，而从t_section的角度来看就是多对一！这种情况都是在多方创建外键！</li>
+    <li>多对多：例如t_stu和t_teacher表，即一个学生可以有多个老师，而一个老师也可以有多个学生。这种情况通常需要创建中间表来处理多对多关系。例如再创建一张表t_stu_tea表，给出两个外键，一个相对t_stu表的外键，另一个相对t_teacher表的外键。</li>
+</ul>
+
+<p><img src="http://47.93.60.69:88/img/pics/59C3F81427544B4FADAA4678451ACA70.png?x-oss-process=style/CfyInfo" alt="" title=""></p>
+
+</body>
+</html>
