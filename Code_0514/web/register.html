@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/b" method="post">
+    <!--
+    label 标签 常和 input标签一同使用
+    通过label 的 for 属性 可以指向 input标签的ID
+    这样 在点击这个label的时候
+    对应的input 就会自动获取焦点,可以提升用户体验
+    -->
+
+    <!--label for的名字 和 input的 ID 名字  必须一致-->
+    <label for="name">用户名:</label><input id="name" name="username"><br>
+
+    <label for="password">密码:</label><input id="password" name="pwd" type="password"><br>
+
+    性别:<input id="gendername" type="radio" name="gender" value="male"><label for="gendername">男</label>
+    <input id="genderfe" type="radio" name="gender" value="female"><label for="genderfe">女</label>
+    <br>
+
+    爱好:<input id="heat" type="checkbox" value="eat" name="hobby"><label for="heat">吃</label>
+    <input id="hd" type="checkbox" value="drink" name="hobby"><label for="hd">喝</label>
+    <input id="hp" type="checkbox" value="play" name="hobby"><label for="hp">玩</label>
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>
