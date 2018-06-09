@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 如果是HTML 则不需要写 script的type
+ 现在js已经成为标准默认的浏览器脚本了-->
+<div id="up"></div>
+<div id="down"></div>
+<script>
+
+    window.onkeydown = function (ev) {
+        // 键盘的按下 在按下的一瞬间执行
+        var up = document.getElementById('up')
+        up.innerText += ev.key
+        console.log(ev);
+    }
+    // window.onkeyup=function (ev) {
+    //     // 键盘抬起
+    //     document.body.innerText+=ev.key
+    //     console.log(ev);
+    // }
+    /**
+     *
+     * onkeydown 和 onkeypress 的区别
+     * 1. onkeydown会先于 onkeypress得到通知
+     * 2. onkeypress 无法捕获系统按键,例如 ctrl shift
+     * 3. onkeydown 捕获的keycode是不区分大小写的
+     */
+    window.onkeypress = function (ev) {
+        var down = document.getElementById('down')
+        down.innerText += String.fromCharCode(ev.charCode)
+        //console.log(ev);
+    }
+</script>
+</body>
+</html>

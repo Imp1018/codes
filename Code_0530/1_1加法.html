@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="one">+<input id="two"><span id="eq">=</span><span id="v"></span>
+<script>
+    var oneInput=document.getElementById('one')
+    var twoInput=document.getElementById('two')
+    var eq=document.getElementById('eq')
+    var v=document.getElementById('v')
+
+    eq.onclick=function () {
+        var one=oneInput.value
+        var two=twoInput.value
+        v.innerText=(parseFloat(one)+parseFloat(two))
+    }
+</script>
+</body>
+</html>

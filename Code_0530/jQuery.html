@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--可以使用jQuery-->
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <style>
+        .d{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--jQuery
+是用来 选取HTML元素,并对选取的元素执行某些操作的JavaScript库,让你写的少 做的多
+-->
+<div class="d"></div>
+<script>
+ //  $('.d').hide() // 隐藏
+    // 文档就绪事件
+    $(document.ready(function () {
+        // 这里的js代码 就会当HTML页面 全部准备完成后执行
+        // 以后所有的代码就写到这里
+        // 这是为了防止,在文档完全加载之前 运行js代码
+        // 即js代码 应当在dom加载完成后,在对dom进行操作
+        $('.d').show()
+    }))
+    // 简便写法
+    $(function () {
+        // 在这里开始写js代码
+
+    })
+</script>
+</body>
+</html>

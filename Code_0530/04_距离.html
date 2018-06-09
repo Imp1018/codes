@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+            border: 10px solid blue;
+        }
+        #content{
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            padding: 60px;
+            border: skyblue solid 10px;
+            position: relative;
+            left: 30px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="content"></div>
+</div>
+<script>
+    var content=document.getElementById('content')
+    // offset 如果父元素中有定位元素
+    // 都是相对于上一个定位元素(position不为static)定位
+    // 如果没有定位的元素,是相对于屏幕的
+    // offset这种属性,他是只读的,不能改变
+
+    console.log(content.offsetLeft);
+    console.log(content.offsetTop);
+    content.style.left='200px'
+</script>
+
+
+
+</body>
+</html>

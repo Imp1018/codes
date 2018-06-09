@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #tank {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            left: 100px;
+        }
+
+        #tank2 {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+<img src="img/tank_up.png" id="tank">
+<img src="img/tank_up.png" id="tank2">
+<script>
+    var tank = document.getElementById('tank')
+    var tank2 = document.getElementById('tank2')
+    var flag = true
+    document.onkeydown = function (ev) {
+        if (!flag) {
+            return
+        }
+        switch (ev.keyCode) {
+            case 37:
+                tank.style.left = tank.offsetLeft - 10 + 'px'
+                tank.src = 'img/tank_left.png'
+                if (tank.offsetLeft <= 0) {
+                    // 撞到左边墙
+                    flag = false
+                    tank.src = 'img/bom.png'
+                }
+                break;
+            case 38:
+                tank.style.top = tank.offsetTop - 10 + 'px'
+                tank.src = 'img/tank_up.png'
+                break;
+            case 39:
+                tank.style.left = tank.offsetLeft + 10 + 'px'
+                tank.src = 'img/tank_right.png'
+                break;
+            case 40:
+                tank.style.top = tank.offsetTop + 10 + 'px'
+                tank.src = 'img/tank_down.png'
+                break;
+
+            case 65:
+                tank2.style.left = tank2.offsetLeft - 10 + 'px'
+                tank2.src = 'img/tank_left.png'
+                if (tank2.offsetLeft <= 0) {
+                    // 撞到左边墙
+                    flag = false
+                    tank2.src = 'img/bom.png'
+                }
+                break;
+            case 87:
+                tank2.style.top = tank2.offsetTop - 10 + 'px'
+                tank2.src = 'img/tank_up.png'
+                break;
+            case 68:
+                tank2.style.left = tank2.offsetLeft + 10 + 'px'
+                tank2.src = 'img/tank_right.png'
+                break;
+            case 83:
+                tank2.style.top = tank2.offsetTop + 10 + 'px'
+                tank2.src = 'img/tank_down.png'
+                break;
+
+
+        }
+        checkBoom()
+
+        function checkBoom() {
+            var x1 = tank.offsetLeft
+            var x2 = tank2.offsetLeft
+
+            var x = Math.abs(x1 - x2)
+
+            var y1 = tank.offsetTop
+            var y2 = tank2.offsetTop
+
+
+            var y = Math.abs(y1 - y2)
+
+            if (x <= 50 && y <= 50) {
+                // 碰上了
+                flag = false
+                tank.src = 'img/bom.png'
+                tank2.src = 'img/bom.png'
+            }
+        }
+    }
+</script>
+</body>
+</html>

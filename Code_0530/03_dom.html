@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input value="bbb">
+<button id="aaa">点击</button>
+<script>
+    var input = document.getElementsByTagName('input')[0]
+    input.value = 'wwwwww' // 获取dom属性
+    document.getElementById('aaa').onclick = function (ev) {
+        // 获取HTML属性
+        // 这个属性,不会随着代码的执行而改变,永远拿的是最初值
+        var htmlval = input.getAttribute('value')
+        input.value=htmlval
+        // 尽量少用,浏览器不一定支持
+        input.setAttribute('value','ccc')
+        alert(htmlval)
+    }
+</script>
+</body>
+</html>

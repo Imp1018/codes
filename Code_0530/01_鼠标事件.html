@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 10px dashed green;
+            background-color: yellow;
+            /** 边框圆角半径   /
+
+             */
+            border-radius: 160px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">我很圆</div>
+<script>
+    var circle = document.getElementById("box")
+    // 鼠标按下
+    circle.onmousedown=function () {
+        circle.style.backgroundColor="lightgreen"
+    }
+    // 鼠标抬起
+    circle.onmouseup=function () {
+        circle.style.backgroundColor="yellow"
+    }
+    // 鼠标划过-> 从外部滑动到内部
+    circle.onmouseover=function () {
+        circle.style.backgroundColor="green"
+        circle.style.borderColor="lightgray"
+    }
+    // 从内部滑动到外部
+    circle.onmouseout=function () {
+        circle.style.backgroundColor="darkbule"
+        circle.style.borderColor="darkgray"
+    }
+    /**
+     * innerHtml 和 innerText 都可以向HTML标签中添加文本
+     * 区别:innerHTML中 可以添加HTML代码,例如 p标签就会被渲染出来
+     * innerText只能添加文本信息,标签也会当做普通文本信息,显示出来
+     */
+    circle.onmousemove=function () {
+      //  circle.innerHTML='<P>啊</P>'
+        circle.innerText='<P>啊</P>'
+        console.log(move);
+    }
+</script>
+</body>
+</html>

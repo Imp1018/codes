@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            background-color: lawngreen;
+            border: black 1px solid;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<button id="hide">隐藏</button>
+<button id="show">显示</button>
+<button id="hideAndShow">隐藏后显示</button>
+<br>
+<button id="fadeIn">淡入</button>
+<button id="fadeOut">淡出</button>
+<button id="fadeInAndOut">淡入淡出</button>
+<br>
+<button id="slideUp">收起菜单</button>
+<button id="slideDown">弹出菜单</button>
+
+<div class="box" id="menu_class">分类相关</div>
+<div class="outter" id="outter"></div>
+<div class="box" id="box1">查看分类</div>
+<div class="box" id="box2">添加分类</div>
+<div class="box" id="box3">删除分类</div>
+<script>
+    $(function () {
+        $('#hide').click(function () {
+            $('.box').hide(5000, function () {
+                alert("隐藏完毕")
+            })
+        })
+    })
+
+
+    $('#show').dblclick(function () {
+        $('.box').show(3000, function () {
+            alert("显示完毕")
+        })
+    })
+
+
+    $('#hideAndShow').click(function () {
+        // 如果隐藏就显示
+        // 如果显示就隐藏
+        $('.box').toggle(1000)
+    })
+
+    /*-----------------------------------------*/
+    $('#fadeIn').click(function () {
+        $('#box1').fadeIn('fast')
+        $('#box2').fadeIn('slow')
+        $('#box3').fadeIn(3000)
+    })
+    $('#fadeOut').click(function () {
+        $('#box3').fadeOut('fast')
+        $('#box2').fadeOut('slow')
+        $('#box1').fadeOut(3000)
+    })
+    $('#fadeInAndOut').click(function () {
+        $('#box1').fadeToggle('fast')
+        $('#box2').fadeToggle('slow')
+        $('#box3').fadeToggle(3000)
+    })
+
+    $('#slideUp').click(function () {
+        $('#box1').slideUp(1000)
+        $('#box2').slideUp(500)
+        $('#box3').slideUp(100)
+    })
+
+    $('#slideDown').click(function () {
+        $('#box1').slideDown(100)
+        $('#box2').slideDown(500)
+        $('#box3').slideDown(1000)
+    })
+    $('#menu_class').click(function () {
+        $('#outter').slideToggle(300)
+    })
+
+</script>
+</body>
+</html>
