@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框</title>
+    <style>
+        .one{
+            border: 1px dashed red;
+        }
+        .two{
+            /*把4个边框按照3要素进行拆分,分别设置*/
+            border-top: 1px dashed blue;
+            border-right: 1px dashed blue;
+            border-bottom: 1px dashed blue;
+            border-left: 1px dashed blue;
+        }
+        .three{
+            width: 0;
+            height: 0;
+            border: 50px solid white;
+            border-top: 50px dashed green;
+            border-bottom: none;
+
+        }
+        /*
+        边框有三要素
+        粗细,线性,颜色
+        只有颜色可以不写 默认黑色
+        其他的不写  边框无法显示
+        */
+    </style>
+</head>
+<body>
+<div class="one">
+    老骥伏枥
+</div>
+
+<div class="two">
+    志在千里
+</div>
+
+<div class="three">
+
+</div>
+
+
+</body>
+</html>

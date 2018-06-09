@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        这四种为类选择器必须按照固定顺序去写
+        先爱后恨 原则
+        love hate
+        */
+        a:link{
+            /*连接还没被点击*/
+            color: #ff63d3;
+        }
+        a:visited{
+            /*
+            访问过这个链接*/
+            color: coral;
+        }
+        a:hover{
+            /*鼠标放在上面悬停*/
+            color: #3860ff;
+            background-color: #ff8af4;
+            border: 1px solid #ff8af4;
+            border-radius: 5px;
+        }
+        a:active{
+            /*按住不松手*/
+            color: floralwhite;
+        }
+    </style>
+</head>
+<body>
+<!--之前的选择器 选择的都是标签
+为类选择器 选择的是 标签的状态
+常见的 就是 a标签-->
+
+<a href="#">这是一个A标签</a>
+</body>
+</html>

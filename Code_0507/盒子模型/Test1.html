@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /**{*/
+           /*padding: 0;*/
+            /*margin: 0;*/
+        /*}*/
+        .one{
+            width: 50px;
+            height: 50px;
+            padding: 50px;color:darkblue;
+            border: 10px solid red;
+            margin: 0px;
+            background-color: gold;
+            overflow: hidden;
+        }
+        .two{
+            /*
+            padding 可以直接写4个方向的距离
+            4个:上 右 下 左
+            3个:上 右 下  左没写 会与右保持一致
+            2个:上 右     左右一致  下上一致
+            */
+            /*
+            如果想要覆盖 切记用小属性 去叠大属性
+            */
+            padding: 10px 20px 30px 15px;
+            background-color: black;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--什么标签是盒子
+所有里面能放东西的标签 都是盒子
+比如 div span a
+比如 img 表单  就不是盒子
+
+一个盒子主要由4部分组成:
+内容 : 设置的宽高 就是设置内容的宽高
+padding : 内容到边框的距离
+border : 边框的粗细
+margin : 从边框到其他元素的距离
+-->
+<div class="one">
+   <img src="http://placekitten.com/50/50">
+</div>
+
+<div class="two">
+    <img src="http://placekitten.com/50/50">
+</div>
+
+<ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+</ul>
+</body>
+</html>

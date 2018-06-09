@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one{
+            padding: 0;
+            background-color: red;
+            margin-bottom: 50px;
+        }
+        .two{
+            padding: 0;
+            background-color: gold;
+            margin-top: 100px;
+        }
+        .three{
+            padding: 0;
+            background-color:slateblue;
+            margin-right: 50px;
+        }
+        .four{
+            padding: 0;
+            background-color:darkgreen;
+            margin-left: 50px;
+        }
+        /*
+        垂直方向上的margin会触发高度坍塌
+        即 上下两个元素的margin只会以较大的值为准
+        而 水平方向上的margin则没有这种现象
+        */
+    </style>
+</head>
+<body>
+<div class="one">AAAA</div>
+<div class="two">BBBB</div>
+<span class="three">CCCC</span>
+<span class="four">DDDD</span>
+</body>
+</html>

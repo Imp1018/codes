@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        语法 选择器+空格+选择器{
+        各种属性
+        }
+        作用范围:
+        选择器1 的标签中 所有的子标签 满足选择器2的标签
+        后代选择器不一定要求是直接后代
+        只要是被包裹起来的就行
+        */
+        div .one{
+            background-color: red;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+<p class="one">月明星稀</p>
+<div>
+    <div class="one">借问酒家何处有</div>
+    <div class="two">牧童遥指杏花村</div>
+    <table>
+        <tr>
+            <td class="one">第一列</td>
+            <td>第二列</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

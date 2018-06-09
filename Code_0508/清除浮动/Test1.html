@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            background-color: seagreen;
+            width: 100px;
+            height: 20px;
+            float: left;
+        }
+       .box2{
+           clear: both;
+
+       }
+    </style>
+</head>
+<body>
+<div>
+    <!--如果一个元素要浮动
+    那么他的父容器或者先祖容器一定要有高度
+    才不会影响其他元素
+
+    有高度的盒子,才能关住浮动-->
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+</div>
+<div class="box2">
+    <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

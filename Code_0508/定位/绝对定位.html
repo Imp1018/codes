@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            border: 1px solid aqua;
+        }
+        .move{
+            position: absolute;
+            bottom: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--
+1. 绝对定位会脱标,脱标之后标签的特性会浮动起来
+2. 绝对定位的参考系
+2.1 没有相对定位的情况
+使用top时,定位是相对于页面的左上角
+使用bottom时,定位是相对于页面首屏的左下角
+-->
+<div class="box move">天青色等烟雨</div>
+<div class="box">而我在等你</div>
+<img src="http://placekitten.com/800/1500">
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            background-color: seagreen;
+            width: 100px;
+            height: 20px;
+            float: left;
+        }
+        .wall{
+            clear: both;
+            height: 20px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+</div>
+<!--
+隔墙法是为了在浮动元素之间 添加一堵墙 目的是换行清除浮动
+并设置元素之间的距离
+-->
+<div class="wall"></div>
+<div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

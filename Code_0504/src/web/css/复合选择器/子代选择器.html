@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        子代选择器 多个选择器使用 > 连接 没有空格
+        与后代选择器不同的是,他会选择直接子代
+        隔代就选不上了
+        */
+        div>.aa{
+            color: darkred;
+        }
+        div tr>.aa{
+            color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p class="aa">周公吐哺</p>
+    <table>
+        <tr>
+            <td class="aa">天下归心</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

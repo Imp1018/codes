@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1, .box2 {
+            height: 150px;
+            width: 150px;
+            border: 1px solid green;
+        }
+        .move{
+            position: relative;
+            left: 151px;
+            top: 303px;
+        }
+    </style>
+</head>
+<body>
+<!--
+相对定位 可以指定元素相对于自己的原始位置
+开启之后可以使用left top   right bottom
+如有冲突 left/top生效   right/bottom 无效
+left/top 意思是 距离自己原始位置 顶部/左边多远
+
+相对定位不会让文档脱标 老家留坑 别人不会把它原始的位置占走
+标签真实的位置还在原来的地方 只不过影子出去了 可以到处飘
+-->
+
+<div class="box1 move">
+    十年之前
+</div>
+<div class="box2">
+    我们是朋友
+</div>
+</body>
+</html>

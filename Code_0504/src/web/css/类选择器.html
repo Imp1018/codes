@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类选择器</title>
+    <style>
+        /*
+        类选择器 语法:
+        .自定义类名{
+        各种样式
+        }
+
+        在使用的时候,哪个html标签想用这个样式
+        就在那个html标签中 通过class属性添加上这个样式的类名
+
+        一个html标签,可以有多个css的样式类在起作用,类选择器就是谁使用谁生效
+        如果 多个类选择器 作用在同一个标签上的同一个属性
+        那么 哪个离标签近 就使用哪个
+
+        类选择器 是自己命名的
+        命名规则:
+        1.不能用数字来头定义类名
+        2.不能用特殊符号开头来定义类名
+        3.不建议使用汉字
+        4.尽量不要跟已有属性名重复了
+        */
+        .poem-title {
+            color: red;
+            font-size: 30px;
+            background-color: #00ff1e;
+            text-align: center;
+        }
+
+        .txt {
+            color: cyan;
+            background-color: lemonchiffon;
+        }
+        .text-right{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<p class="poem-title">
+    七步诗
+</p>
+<p class="txt text-right">煮豆燃豆萁</p>
+<p class="txt">豆在釜中泣</p>
+<p class="txt text-right">本自同根生</p>
+<p class="txt">相煎何太急</p>
+</body>
+</html>

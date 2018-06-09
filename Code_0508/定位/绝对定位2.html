@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: saddlebrown;
+            position: relative;
+            left: 100px;
+            padding: 50px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: dodgerblue;
+            position: absolute;
+            left: 100px;
+        }
+        .box{
+            position: relative;
+            width: 200px;
+        }
+        .title{
+            position: absolute;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+            left: 50%;
+            margin-left: -50px;
+            text-align: center;
+            background-color: rgba(0,0,0,0.2);
+
+        }
+    </style>
+</head>
+<body>
+<!--
+一个绝对定位的元素,如果父辈元素中也出现了定位
+(无论是 相对,绝对还是固定定位)那么 将以这个父辈元素
+作为参考点,如果有多个,选择离他最近的父辈元素
+注意,这个元素不一定是父标签,也有可能是爷爷.....
+
+子标签 绝对定位的参考点,是无视父标签padding的,直接顶在边框位置
+
+以后用绝对定位 经常会发现父相子绝 这种组合
+可以保证 要定位的元素,不会脱离父容器的范围 到处乱跑
+-->
+<div class="father">
+    <div class="son">
+
+    </div>
+</div>
+<div class="box">
+    <img src="http://placekitten.com/200/200">
+    <p class="title">这是一个社会猫</p>
+</div>
+</body>
+</html>

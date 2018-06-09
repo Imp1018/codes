@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .box3{
+            width: 200px;
+            height:200px;
+            background-color: chartreuse;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--浮动性质1:元素脱标
+元素脱标的意思是,标明了浮动的元素,会脱离标准文档流-->
+
+<!--box2由于没有设置浮动 现在变成了标准文档流的第一个元素
+而box1 从标准文档流中脱离出去,并且在另一个层面上进行排列
+-->
+<div class="box1"></div>
+<div class="box2"></div>
+
+<hr>
+<!--
+原本不能设置宽高的span标签,由于浮动脱离了标准文档流
+并且他可以设置宽高了,实际上,宽高是HTML将其转换成块级元素来渲染的
+并且还能在一行,可以认为,浮动起来的元素 没有 行内元素和块级元素这样的分类了
+-->
+<span class="box3">人生只有走出来的美丽,没有等出来的辉煌</span>
+</body>
+</html>
