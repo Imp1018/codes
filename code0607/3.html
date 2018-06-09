@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+    删除
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <!--<h4 class="modal-title" id="myModalLabel">模态框的头</h4>-->
+            <!--</div>-->
+            <div class="modal-body">
+               <h3>确认删除</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-sm" id="yes_btn" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $("#yes_btn").click(function () {
+        // 1. 发送ajax请求删除数据
+        // 2. 关闭模态框
+        $("#myModal").modal("hide")
+    })
+</script>
+</html>
