@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+<context:component-scan base-package="com.lanou.service.impl"/>
+    <context:component-scan base-package="com.lanou.service"/>
+
+    <bean class="com.lanou.aop.XmlAopDemo" id="xmlAopDemo"/>
+
+
+    <aop:config>
+        <aop:aspect ref="xmlAopDemo">
+            <aop:pointcut id="pt" expression="execution(* com.lanou.service.*.add*(..))"/>
+            <!--
+            execution表达式所表达的是什么样的方法
+            第一个*:代表任意返回值类型
+            第二个*:service包下的任意类
+            第三个*:类中的任意方法
+            (..)任意参数
+            -->
+            <aop:around method="around" pointcut="execution(* com.lanou.service.*.add*(..))"/>
+            <aop:before method="before" pointcut-ref="pt"/>
+
+        </aop:aspect>
+    </aop:config>
+</beans>
