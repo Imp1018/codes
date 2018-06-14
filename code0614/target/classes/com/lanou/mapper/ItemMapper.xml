@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanou.mapper.ItemMapper">
+
+    <!--SELECT * FROM  item WHERE name =`手机`-->
+    <!--SELECT * FROM  item WHERE  price > 3000-->
+    <!--SELECT * FROM  item WHERE name=`手机` AND price > 3000-->
+
+    <!--where标签特性:
+    1. 会删除后面跟着的第一个and
+    2. 如果where后面没有东西 会把自己也给删掉
+    -->
+    <select id="findItem" resultType="item">
+        SELECT * FROM item
+        <where>
+            <if test="name != null ">
+                AND name=#{name}
+            </if>
+            <if test="price !=null ">
+                AND price>#{price}
+            </if>
+        </where>
+    </select>
+
+    <sql id="columns">
+         id item_id,name item_name
+      </sql>
+
+    <select id="selectById" resultType="item">
+        SELECT
+        <include refid="columns"/>
+        FROM item WHERE id = #{id}
+    </select>
+
+    <select id="findAll" resultType="item">
+        SELECT
+        <include refid="columns"/>
+        FROM item
+    </select>
+
+
+    <delete id="deleteByIds">
+        DELETE FROM item
+        <where>
+            <if test="list != null  and list.size > 0">
+                <foreach collection="list" item="id" open=" id IN (" close=")" separator=",">
+                    #{id}
+                </foreach>
+            </if>
+            <if test=" list == null or list.size == 0">
+                1=2
+            </if>
+        </where>
+    </delete>
+
+
+
+    <delete id="deleteByIdArray">
+        delete from item
+        <where>
+            <if test="array != null and array.length > 0">
+                <foreach collection="array" item="id" open="id in (" close=")" separator=",">
+                    #{id}
+                </foreach>
+            </if>
+            <if test="array == null or array.length == 0">
+                1=2
+            </if>
+        </where>
+    </delete>
+</mapper>
