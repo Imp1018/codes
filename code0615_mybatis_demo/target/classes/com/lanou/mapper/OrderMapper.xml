@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanou.mapper.OrderMapper">
+
+    <resultMap id="OrderResultMap" type="order">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="userId" column="user_id"/>
+        <association property="user" javaType="user" select="com.lanou.mapper.UserMapper.findById" column="user_id" fetchType="eager"/>
+    </resultMap>
+
+    <select id="findById" resultMap="OrderResultMap">
+    SELECT * FROM `order` WHERE id = #{id}
+    </select>
+
+
+</mapper>
