@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lanou.mapper.OrderMapper">
-
+    <sql id="orderColumns">
+        o.id order_id,
+        o.create_time,
+        o.user_id
+    </sql>
+    <sql id="userColumns">
+        u.id user_id,
+        u.username,
+        u.gender,
+        u.birthday
+    </sql>
+    <sql id="orderdetatilColumns">
+        od.id orderdetail_id,
+        od.order_id,
+        od.item_id,
+        od.item_num
+    </sql>
     <resultMap id="OrderWithUserResultMap" type="order">
         <id property="id" column="order_id"/>
         <result property="createTime" column="create_time"/>
@@ -32,6 +48,9 @@
     <select id="findOrderWithOrderDetailsById" resultMap="OrderWithOrderdetailsResultMap">
         select o.id order_id,o.create_time,o.user_id,od.id orderdetail_id,od.order_id,od.item_id,od.item_num from `order` o, `orderdetail` od where o.id = od.order_id and o.id = #{id};
     </select>
+
+
+
 
 
 </mapper>

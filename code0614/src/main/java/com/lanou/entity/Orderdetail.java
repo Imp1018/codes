@@ -5,6 +5,16 @@ public class Orderdetail {
     private Integer orderId;
     private  Integer itemId;
     private Integer itemNum;
+    private Item item;
+
+    public Item getItem() {
+        return item;
+    }
+
+    public Orderdetail setItem(Item item) {
+        this.item = item;
+        return this;
+    }
 
     @Override
     public String toString() {

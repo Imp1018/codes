@@ -2,8 +2,10 @@ package com.lanou.test;
 
 import com.lanou.entity.Item;
 import com.lanou.entity.Order;
+import com.lanou.entity.User;
 import com.lanou.mapper.ItemMapper;
 import com.lanou.mapper.OrderMapper;
+import com.lanou.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -70,6 +72,15 @@ public class MybatisTest {
         System.out.println(order);
     }
 
+@Test
+    public void test4() throws IOException {
+    InputStream resource = Resources.getResourceAsStream("mybatis.xml");
+    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resource);
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+    User user = mapper.findUserWithOrdersAndOrderdetailsAndItemsById(1);
+    System.out.println(user);
 
+}
 
 }

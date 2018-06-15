@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanou.mapper.UserMapper">
+
+    <sql id="itemColumns">
+        i.id item_id,
+        i.name,
+        i.price
+    </sql>
+    <sql id="orderColumns">
+        o.id order_id,
+        o.create_time,
+        o.user_id
+    </sql>
+    <sql id="userColumns">
+        u.id user_id,
+        u.username,
+        u.gender,
+        u.birthday
+    </sql>
+    <sql id="orderdetatilColumns">
+        od.id orderdetail_id,
+        od.order_id,
+        od.item_id,
+        od.item_num
+    </sql>
+    <resultMap id="UserResultMap" type="user">
+        <id property="id" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="gender" column="gender"/>
+        <result property="birthday" column="birthday"/>
+        <collection property="orders" ofType="order">
+            <id property="id" column="order_id"/>
+            <result property="createTime" column="create_time"/>
+            <result property="userId" column="user_id"/>
+            <collection property="orderdetails" ofType="orderdetail">
+                <id property="id" column="orderdetail_id"/>
+                <result property="orderId" column="order_id"/>
+                <result property="itemId" column="item_id"/>
+                <result property="itemNum" column="item_num"/>
+                <association property="item" javaType="item">
+                    <id property="id" column="item_id"/>
+                    <result property="name" column="name"/>
+                    <result property="price" column="price"/>
+                </association>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="findUserWithOrdersAndOrderdetailsAndItemsById" resultMap="UserResultMap">
+        select
+        <include refid="userColumns"/>
+        ,
+        <include refid="com.lanou.mapper.OrderMapper.orderColumns"/>
+        ,
+        <include refid="com.lanou.mapper.OrderMapper.orderdetatilColumns"/>
+        ,
+        <include refid="itemColumns"/>
+
+
+        from `user` u, `order` o, orderdetail od, item i
+        where u.id = o.user_id and o.id = od.order_id and od.item_id = i.id and u.id = #{id};
+    </select>
+</mapper>

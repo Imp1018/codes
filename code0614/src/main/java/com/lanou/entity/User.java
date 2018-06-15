@@ -1,12 +1,14 @@
 package com.lanou.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private Integer id;
     private String username;
     private Integer gender;
     private Date birthday;
+    private List<Order>orders;
 
     @Override
     public String toString() {
@@ -15,7 +17,17 @@ public class User {
                 ", username='" + username + '\'' +
                 ", gender=" + gender +
                 ", birthday=" + birthday +
+                ", orders=" + orders +
                 '}';
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public User setOrders(List<Order> orders) {
+        this.orders = orders;
+        return this;
     }
 
     public Integer getId() {
